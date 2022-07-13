@@ -13,10 +13,10 @@ public class AdministradorDeConexiones
 		String password = "root" ;
 	    String driverName = "com.mysql.cj.jdbc.Driver";	//para mysql
 	    */
-		String url = "System.getenv(DATASOURCE_URL)";
-		String username = "System.getenv(DATASOURCE_USERNAME)";
-		String password = "System.getenv(DATASOURCE_PASSWORD)";
-	    String driverName ="System.getenv(DATASOURCE_DRIVER)";
+		String url = System.getenv("DATASOURCE_URL");
+		String username = System.getenv("DATASOURCE_USERNAME");
+		String password = System.getenv("DATASOURCE_PASSWORD");
+	    String driverName = System.getenv("DATASOURCE_DRIVER");
 	    
 	    //control errores
 	    Connection con = null;
@@ -26,7 +26,7 @@ public class AdministradorDeConexiones
 	    } catch(Exception e) {
 			e.printStackTrace();// me dice qué fue lo que falló
 	    }
-		return con;
+ 		return con;
 	}
 
 

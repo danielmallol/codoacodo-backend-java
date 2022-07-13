@@ -28,8 +28,13 @@ public class CreateController extends HttpServlet {
 	    if(con != null) {
 	    	// insert into DB
 	    	String sql = "INSERT INTO PRODUCTO (nombre, precio, fecha_creacion, imagen, codigo)";
-	    	sql += "VALUES('"+nombre+"', "+precio+",CURDATE(), '"+imagen+"','"+codigo+"')";
-	    //control de errores:
+	    	 
+	    	//la siguiente línea vale para mysql, pero no para postgres
+	        // sql += "VALUES('"+nombre+"', "+precio+",CURDATE(), '"+imagen+"','"+codigo+"')";
+
+	    	sql += "VALUES('"+nombre+"',"+precio+",CURRENT_DATE,'"+imagen+"','"+codigo+"')";
+	    	
+	    	//control de errores:
 	    try {
 	    	Statement st = con.createStatement() ;
 	    	st.execute(sql);
