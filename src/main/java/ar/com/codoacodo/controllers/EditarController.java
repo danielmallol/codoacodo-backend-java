@@ -18,14 +18,11 @@ import ar.com.codoacodo.connection.AdministradorDeConexiones;
 import ar.com.codoacodo.dto.Producto;
 
 
-
-
 @WebServlet("/api/EditarController")
 public class EditarController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		
 		String id = req.getParameter("id");
 		
 		String sql = "SELECT * FROM PRODUCTO WHERE ID="+id;
@@ -39,9 +36,9 @@ public class EditarController extends HttpServlet {
 			//resultset
 			ResultSet rs = st.executeQuery(sql);
 			
-			List<Producto> listado = new ArrayList();
+			Producto prodFromDb	= null ;
 			
-			while(rs.next()) {//¿mientras tenga datos?
+			if(rs.next()) {//¿mientras tenga datos?
 				// rs > sacando los datos
 				Long idProducto = rs.getLong(1);//tomar la primer columna
 				String nombre = rs.getString(2);
@@ -52,22 +49,18 @@ public class EditarController extends HttpServlet {
 				
 				
 				//campos crear un objeto????
-				Producto prodFromDb = new Producto(idProducto,nombre,precio,fecha,imagen,codigo);
-				//Producto prodFromDb = null;
-				
-				//cargo el producto en listado
-				listado.add(prodFromDb);
+				prodFromDb = new Producto(idProducto,nombre,precio,fecha,imagen,codigo);
 			}
 			
 			//ir a otra pagina y ademas pasarle datos				
-			req.setAttribute("listado", listado.get(0));
+			req.setAttribute("producto", prodFromDb);
 			
-			//ir a la siguiente pagina
+			//ir a la siguiente pagina  
 			getServletContext().getRequestDispatcher("/editar.jsp").forward(req, resp);
 			
 			//cierre de conexion
 			con.close();
-			
+   			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
