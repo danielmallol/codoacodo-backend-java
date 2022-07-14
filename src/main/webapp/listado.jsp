@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="ar.com.codoacodo.dto.Producto"%>
 <html>
 	<head>
@@ -10,40 +11,38 @@
 			<%@include file="navbar.jsp" %>
 			<div class="container">
 				<section>
-					<% 
-					  	Producto producto = (Producto)request.getAttribute("producto");
-				  	%>
-					<h1>Editar producto ID=<%=producto.getIdProducto()%></h1>
-					<!--  JSP -->
-					<form method="POST"
-						action="<%=request.getContextPath()%>/api/EditarController">
-						<div class="mb-3">
-						  <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-						  <input name="nombre"
-						  	value="<%=producto.getNombre()%>"  
-						  	type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" maxlength="50">
-						</div>
-						<div class="mb-3">
-						  <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
-						  <input name="precio"
-						  	value="<%=producto.getPrecio()%>" 
-						  	type="number" class="form-control" id="exampleFormControlTextarea1">
-						</div>
-						<div class="mb-3">
-						  <label for="exampleFormControlTextarea1" class="form-label">Im&aacute;gen</label>
-						  <input name="imagen" type="file" class="form-control" id="exampleFormControlTextarea1">
-						</div>
-						<div class="mb-3">
-						  <label for="exampleFormControlTextarea1" class="form-label">C&oacute;digo</label>
-						  <input name="codigo"
-						  	readonly="readonly"
-						  	value="<%=producto.getCodigo()%>" 
-						  	type="text" class="form-control" id="exampleFormControlTextarea1" maxlength="7">
-						</div>
-						<button class="btn btn-primary">
-							Grabar
-						</button>
-					</form>
+					<h1>Alta</h1>
+					<table class="table">
+					  <thead>
+					    <tr>
+					      <th scope="col">ID</th>
+					      <th scope="col">NOMBRE</th>
+					      <th scope="col">PRECIO</th>
+					      <th scope="col">C&Oacute;DIGO</th>
+					    </tr>
+					  </thead>
+					  <% 
+					  	//codigo java
+					  	//obtener el listado desde el request
+					  	//se guardo bajo el nombre de "listado"
+					  	List<Producto> listado = (List<Producto>)request.getAttribute("listado");
+					  %>
+					  <tbody>
+					   <!-- ESTO SE REPITE TANTA CANDTIDAD DE VECES COMO ARTICULOS TENGA -->
+					   <%
+					   	for( Producto  unProducto : listado) {
+					   %>
+					    <tr>
+					      <th scope="row"> <%=unProducto.getIdProducto()%> </th>
+					      <td><%=unProducto.getNombre() %></td>
+					      <td><%=unProducto.getPrecio() %></td>
+					      <td><%=unProducto.getCodigo() %></td>
+					    </tr>
+					   <%
+					   	}
+					   %>
+					  </tbody>
+					</table>
 				</section>
 			</div>
 		</main>
