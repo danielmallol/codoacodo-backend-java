@@ -69,7 +69,8 @@ public class EditarController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		String nombre = req.getParameter("nombre");
-		String precio = req.getParameter("precio"); //pasar a float con parseFloat
+		String precio1 = req.getParameter("precio"); //pasar a float con parseFloat
+		Float  precio = Float.parseFloat(precio1);
 		String imagen = req.getParameter("imagen");
 		String codigo = req.getParameter("codigo");
 		
