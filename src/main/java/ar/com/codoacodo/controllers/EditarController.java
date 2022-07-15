@@ -65,6 +65,33 @@ public class EditarController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-}
 		
-
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+		String nombre = req.getParameter("nombre");
+		String precio = req.getParameter("precio"); //pasar a float con parseFloat
+		String imagen = req.getParameter("imagen");
+		String codigo = req.getParameter("codigo");
+		
+		Connection con = AdministradorDeConexiones.getConnection();
+	    if(con != null) {
+	    	String sql = "UPDATE PRODUCTO "
+	    			+ "set nombre='"+nombre+"',"
+	    			+ "precio='"+precio+"'" 
+	    			+ "WHERE codigo = '"+codigo+"'";
+	    			
+	    try {
+	    	Statement st = con.createStatement() ;
+	    	st.executeUpdate(sql);
+	    	con.close();
+	    	
+	   resp.sendRedirect(req.getContextPath()+"/api/ListadoController");
+	    	
+	    } 
+	    catch (Exception e) {
+	    		e.printStackTrace();
+    	}
+    }
+}
+	
+}
