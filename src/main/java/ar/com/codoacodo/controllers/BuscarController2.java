@@ -18,7 +18,7 @@ import ar.com.codoacodo.connection.AdministradorDeConexiones;
 import ar.com.codoacodo.dto.Producto;
 
 @WebServlet("/api/ListadoController")
-public class BuscarController extends HttpServlet {
+public class BuscarController2 extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
