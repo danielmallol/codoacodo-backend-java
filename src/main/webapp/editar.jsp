@@ -15,7 +15,7 @@
 				  	%>
 					<h1>Editar producto ID=<%=producto.getIdProducto()%></h1>
 					<!--  JSP -->
-					<form method="Get"
+					<form method="POST"
 						action="<%=request.getContextPath()%>/api/EditarController">
 						<div class="mb-3">
 						  <label for="exampleFormControlInput1" class="form-label">Nombre</label>
