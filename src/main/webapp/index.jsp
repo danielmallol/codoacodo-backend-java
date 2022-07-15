@@ -9,7 +9,7 @@
 		<main>
 			<div class="container">
 				<section>
-					<h1>ABM de productos </h1>
+					<h1>Altas, Bajas y Modificaciones de productos </h1>
 				</section>
 			</div>
 		</main>
