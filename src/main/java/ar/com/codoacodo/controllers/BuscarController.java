@@ -22,7 +22,9 @@ public class BuscarController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String clave = req.getParameter("clave");
+	  String clave = req.getParameter("clave");
+		
+	  if(clave != "") {
 		
 		String sql = "SELECT * FROM PRODUCTO WHERE nombre LIKE '%"+clave+"%' ";
 		
@@ -64,5 +66,6 @@ public class BuscarController extends HttpServlet {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+	  }	
 	}
 }
