@@ -10,8 +10,8 @@
 		<main>
 			<div class="container">
 				<section>
-					<h1>Altas, Bajas y Modificaciones de Productos </h1>
-					<img src="https://cdn.pixabay.com/photo/2015/03/17/02/01/cubes-677092__340.png">		
+					<h1>Altas, Bajas y Modificaciones</h1>
+					<img src="../img/products2.jpg">		
 				</section>
 			</div>
 		</main>
