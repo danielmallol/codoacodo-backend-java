@@ -16,7 +16,7 @@
       <form class="d-flex"	
       	action="<%=request.getContextPath()%>/api/BuscarController" 
       	method="get">
-        <input name="clave" class="form-control me-2" type="search" placeholder="Nombre de producto" aria-label="Search">
+        <input name="clave" class="form-control me-2" type="search" placeholder="Nombre del producto" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
