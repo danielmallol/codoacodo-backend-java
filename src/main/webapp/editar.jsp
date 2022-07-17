@@ -31,10 +31,12 @@
 						  	value="<%=producto.getPrecio()%>" 
 						  	type="number" class="form-control" id="exampleFormControlTextarea1">
 						</div>
+						<!--
 						<div class="mb-3">
-						  <label for="exampleFormControlTextarea1" class="form-label">Im&aacute;gen</label>
+						  <label for="exampleFormControlTextarea1" class="form-label">Imagen</label>
 						  <input name="imagen" type="file" class="form-control" id="exampleFormControlTextarea1">
 						</div>
+						-->
 						<div class="mb-3">
 						  <label for="exampleFormControlTextarea1" class="form-label">C&oacute;digo</label>
 						  <input name="codigo"
