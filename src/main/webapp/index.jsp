@@ -10,7 +10,7 @@
 		<main>
 			<div class="container">
 				<section>
-					<h1>Productos: Altas, Bajas y Modificaciones</h1>
+					<h2>Productos: Altas, Bajas y Modificaciones</h2>
 					<img src="../img/products.jpg">		
 				</section>
 			</div>

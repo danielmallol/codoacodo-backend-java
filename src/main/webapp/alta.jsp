@@ -10,7 +10,7 @@
 			<%@include file="navbar.jsp" %>
 			<div class="container">
 				<section>
-					<h1>Alta</h1>
+					<h2>Alta</h2>
 					<!--  JSP -->
 					<form method="post"
 						action="<%=request.getContextPath()%>/CreateController">

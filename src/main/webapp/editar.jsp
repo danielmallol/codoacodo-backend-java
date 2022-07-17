@@ -14,7 +14,7 @@
 					<% 
 					  	Producto producto = (Producto)request.getAttribute("producto");
 				  	%>
-					<h1>Editar producto <%=producto.getIdProducto()%></h1>
+					<h2>Editar producto <%=producto.getIdProducto()%></h2>
 					<!--  JSP -->
 					<form method="POST"
 						action="<%=request.getContextPath()%>/api/EditarController">
