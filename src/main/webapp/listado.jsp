@@ -12,7 +12,8 @@
 			<%@include file="navbar.jsp" %>
 			<div class="container">
 				<section>
-					<h2>Listado</h2>
+				    <br>
+				    <h2>Listado</h2>
 					<table class="table">
 					  <thead>
 					    <tr>

@@ -10,6 +10,7 @@
 		<main>
 			<div class="container">
 				<section>
+				    <br>				
 					<h2>Productos: Altas, Bajas y Modificaciones</h2>
 					<img src="../img/products.jpg">		
 				</section>

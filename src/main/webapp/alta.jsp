@@ -10,6 +10,7 @@
 			<%@include file="navbar.jsp" %>
 			<div class="container">
 				<section>
+				    <br>
 					<h2>Alta</h2>
 					<!--  JSP -->
 					<form method="post"
