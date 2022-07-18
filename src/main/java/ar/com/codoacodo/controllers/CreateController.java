@@ -30,7 +30,6 @@ public class CreateController extends HttpServlet {
 	    	String sql = "INSERT INTO PRODUCTO (nombre, precio, fecha_creacion, imagen, codigo)";
 	    	 
 	    	//la siguiente línea vale para mysql, pero no para postgres
-	        // sql += "VALUES('"+nombre+"', "+precio+",CURDATE(), '"+imagen+"','"+codigo+"')";
 
 	    	sql += "VALUES('"+nombre+"',"+precio+",CURRENT_DATE,'"+imagen+"','"+codigo+"')";
 	    	

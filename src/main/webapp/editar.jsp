@@ -29,7 +29,7 @@
 						  <label for="exampleFormControlTextarea1" class="form-label">Precio</label>
 						  <input name="precio"
 						  	value="<%=producto.getPrecio()%>" 
-						  	type="number" class="form-control" id="exampleFormControlTextarea1">
+						  	type="number" step="0.01" class="form-control" id="exampleFormControlTextarea1">
 						</div>
 						<!--
 						<div class="mb-3">

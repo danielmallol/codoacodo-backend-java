@@ -1,4 +1,4 @@
 git status
 git add .
-git commit -m"TP final + estilos"
+git commit -m"TP final + estilos $1"
 git push
